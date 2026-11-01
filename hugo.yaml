@@ -1,0 +1,74 @@
+baseURL: "https://celllyam.github.io/"
+locale: ko-KR
+defaultContentLanguage: ko
+title: "Sungjae 기술 노트"
+theme: PaperMod
+
+enableRobotsTXT: true
+enableGitInfo: true          # 글마다 마지막 수정일을 git 이력에서 가져옴
+buildDrafts: false           # draft: true 글은 절대 배포되지 않음
+buildFuture: false
+summaryLength: 40
+
+pagination:
+  pagerSize: 10
+
+# 글 분류 체계
+#  categories = 글 유형 (트러블슈팅 / 개념정리 / 구축기록 / 프로젝트회고 / 업무회고)
+#  series     = 연재 묶음 (optd-인프라, optd-C, ...)
+#  tags       = 기술 키워드 (wsl2, vmware, ansible, ...)
+taxonomies:
+  category: categories
+  series: series
+  tag: tags
+
+outputs:
+  home: [HTML, RSS, JSON]    # JSON은 사이트 내 검색용
+
+caches:
+  images:
+    dir: :cacheDir/images
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: false
+  highlight:
+    noClasses: false
+    lineNos: false
+    codeFences: true
+
+params:
+  env: production
+  description: "C/C++ 시스템 프로그래밍, 인프라, 클라우드 학습 기록"
+  author: "Sungjae"
+  defaultTheme: auto
+  ShowReadingTime: true
+  ShowToc: true
+  TocOpen: false
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowPostNavLinks: true
+  ShowLastMod: true
+  ShowShareButtons: false
+  homeInfoParams:
+    Title: "기술 노트"
+    Content: "막힌 것과 해결, 개념 정리, 구축 기록, 회고를 남깁니다."
+  socialIcons:
+    - name: github
+      url: "https://github.com/celllyam"
+
+menu:
+  main:
+    - name: 글 유형
+      url: /categories/
+      weight: 10
+    - name: 시리즈
+      url: /series/
+      weight: 20
+    - name: 태그
+      url: /tags/
+      weight: 30
+    - name: 검색
+      url: /search/
+      weight: 40
