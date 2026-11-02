@@ -9,7 +9,7 @@ Tags: ["Oracle", "RAC", "Application Continuity", "Transaction Guard", "고가�
 
  - Abbreviation
  - RAC(Real Application Clusters) | TAC(Transparent Application Continuity) | AC(Application Continuity)
- - FAN(Fast Application Notification, 장애 알림 이벤트) | FCF(Fast Connection Failover, 커넥션 풀의 빠른 장애 전환) |  LTXID(Logical Transaction ID, 논리 트랜잭션 ID) | FSFO(Fast-Start Failover, Data Guard 자동 전환) | DR(Disaster Recovery, 재해 복구)
+ - FAN(Fast Application Notification, 장애 알림 이벤트) | FCF(Fast Connection Failover, 커넥션 풀의 빠른 장애 전환) | LTXID(Logical Transaction ID, 논리 트랜잭션 ID) | FSFO(Fast-Start Failover, Data Guard 자동 전환) | DR(Disaster Recovery, 재해 복구)
 
 ### 한줄 결론
 > - RAC 는 인스턴스 장애에는 대응 가능하지만 스토리지, 데이터센터 장애에는 대응하지 못함.
@@ -17,9 +17,9 @@ Tags: ["Oracle", "RAC", "Application Continuity", "Transaction Guard", "고가�
 ## 1. 상황 설명
 > - 현재 On-promise DC의 Oracle Service 를 사용중 임.
 > - DB Server Instance 와 DB Storage 는 하나씩, 두개의 데이터센터에 Primary/Standby 환경구성 돼 있음. 
-> - 최근 어떠한 보안 프로젝트로 인해 지속적인 Oracle DB Software Patch, DB Server - Linux 에 대한 Patch 주기가 점점 짧아지며 횟수가 증가함.
-> - 이에 따른 어플리케이션 팀의 긴급한 패치 시 운영 능력 확보가 중요해짐. (그 외에도 비즈니스 요건상 24/7 무중단 운영능력을 확보 하는것이 있었음)
-> - 물론 RAC 의 이점은 이것뿐만 아니라 가장 큰 이점은 고가용성, High Availability 에 있다. AWS 의 개념상 멈추지 않고 오랜 기간동안 정상 운영되는 성질을 말함.
+> - 최근 어떠한 보안 프로젝트로 인해 지속적인 Oracle DB Software Patch, DB Server - Linux 에 대한 Patch 주기가 점점 짧아지며 횟수가 증가하며 다운타임이 늘어남.
+> - 이에 따라 어플리케이션 팀의 고가용성 확보가 중요해짐. (그 외에도 비즈니스 요건상 24/7 무중단 운영능력을 확보 하는것이 있었음)
+> - 고가용성, High Availability AWS 의 개념상 멈추지 않고 오랜 기간동안 정상 운영되는 성질을 말함.
 > - 실무에선 RAC 구성으로 DB Instance 여러개의 Resource 를 이용하여 성능을 높이기도 함. (Ex. Instance #1 과 #2에 DML 요청을 나눠서 처리하게 하기도 함)
 
 ## 2. 전체 구조
@@ -51,6 +51,7 @@ Tags: ["Oracle", "RAC", "Application Continuity", "Transaction Guard", "고가�
 
 > - 인스턴스 장애에 대응 할 수 있음
 > - 스토리지/데이터센터 장애에 대응하지 못함
+> - 실패한 DB Transaction 을 재처리 하지 않음 >> 이 떄는 TAC 가 등장함.
 
 <!-- ### 3-3. TAC가 하는 일과 재실행을 포기하는 경우
 
@@ -66,10 +67,9 @@ Tags: ["Oracle", "RAC", "Application Continuity", "Transaction Guard", "고가�
 > - HikariCP는 6.0.0부터 요청 경계(beginRequest/endRequest)를 지원한다. 재실행에는 replay 데이터소스(oracle.jdbc.replay.OracleDataSourceImpl) 또는 통합 데이터소스(oracle.jdbc.datasource.impl.OracleDataSource)가 필요하다.
 > - (선택 심화) RAC에서 시퀀스 캐시는 인스턴스마다 따로 잡혀서, NOORDER면 번호 순서가 인스턴스 사이에서 섞인다. 시퀀스 캐시를 다뤄본 경험과 이어 쓸 수 있는 지점. -->
 
+## 4. 정리
 
-## 5. 정리
-
-> - RAC 구조와 각 장애 타입에 따른 RAC 의 이점, 혹은 제한.
+> - RAC 구조와 각 장애 타입에 따른 RAC 가 해주는 일과 하지 못하는 일이 있다
 
 ## 참고 자료
 
