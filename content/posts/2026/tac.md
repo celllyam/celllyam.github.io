@@ -68,18 +68,18 @@ Tags: ["Oracle", "TAC", "Application Continuity", "Transaction Guard", "고가�
 > - (선택 심화) RAC에서 시퀀스 캐시는 인스턴스마다 따로 잡혀서, NOORDER면 번호 순서가 인스턴스 사이에서 섞인다. 시퀀스 캐시를 다뤄본 경험과 이어 쓸 수 있는 지점. -->
 
 
-## 5. 정리
+<!-- ## 5. 정리
 
-> - RAC 구조와 각 장애 타입에 따른 RAC 가 해주는 일과 하지 못하는 일이 있다
+> - RAC 구조와 각 장애 타입에 따른 RAC 가 해주는 일과 하지 못하는 일이 있다 -->
 
 ## 참고 자료
 
-- [Oracle 19c High Availability Overview — Configuring Level 3: Mask Unplanned and Planned Failovers from Applications](https://docs.oracle.com/en/database/oracle/oracle-database/19/haovw/configuring-level-3-mask-unplanned-and-planned-failovers-applications.html)
-- [Oracle RAC Administration and Deployment Guide 21c — Ensuring Application Continuity](https://docs.oracle.com/en/database/oracle/oracle-database/21/racad/ensuring-application-continuity.html)
+<!-- - [Oracle 19c High Availability Overview — Configuring Level 3: Mask Unplanned and Planned Failovers from Applications](https://docs.oracle.com/en/database/oracle/oracle-database/19/haovw/configuring-level-3-mask-unplanned-and-planned-failovers-applications.html)
+- [Oracle RAC Administration and Deployment Guide 21c — Ensuring Application Continuity](https://docs.oracle.com/en/database/oracle/oracle-database/21/racad/ensuring-application-continuity.html) -->
 - [Oracle JDBC Developer's Guide 18c — Application Continuity for Java](https://docs.oracle.com/en/database/oracle/oracle-database/18/jjdbc/application-continuity.html)
 - [Oracle Database Appliance — Scenario: Configuring Transparent Application Continuity](https://docs.oracle.com/en/engineered-systems/oracle-database-appliance/19.30/odadg/scenario-configuring-transparent-application-continuity.html)
-- [Oracle MAA Blog — HikariCP Best Practices for Oracle Database and Spring Boot](https://blogs.oracle.com/maa/hikaricp-best-practices-for-oracle-database-and-spring-boot)
-- [Oracle — Maximum Application Availability with Database 12c (2013)](https://www.oracle.com/technetwork/database/options/clustering/overview/maxappavailabilitywithdatabase12c-2008418.pdf)
+<!-- - [Oracle MAA Blog — HikariCP Best Practices for Oracle Database and Spring Boot](https://blogs.oracle.com/maa/hikaricp-best-practices-for-oracle-database-and-spring-boot) -->
+<!-- - [Oracle — Maximum Application Availability with Database 12c (2013)](https://www.oracle.com/technetwork/database/options/clustering/overview/maxappavailabilitywithdatabase12c-2008418.pdf) -->
 
 <!-- ## 발행 전 체크
 
